@@ -11,7 +11,7 @@ Node.js module for the organization of control of languages in the application a
 ## Usage
 
 ```javascript
-var langPackage = require('@sungmaster/langpackage');
+var langPackage = require('langpackage');
 
 let langPack = {};
 langPack.en = new langPackage();
