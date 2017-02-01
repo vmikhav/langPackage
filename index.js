@@ -11,7 +11,7 @@ var Lang = function () {
  */
 Lang.prototype.pushPhrase = function (code, phrase) {
 	if (typeof phrase === 'string'){var phrase = [phrase];}
-	else if (typeof phrase === 'function'){var phrase = ['', phrase];}
+	else if (typeof phrase === 'function'){var phrase = ['', phrase, ''];}
 	this.phrase[code] = phrase;
 };
 /**
@@ -31,7 +31,12 @@ Lang.prototype.get = function (code, args) {
 			result+=this.phrase[code][i+offset](args[i]);
 			offset++;
 		}
-		result+=this.phrase[code][i+offset];
+		if (typeof this.phrase[code][i+offset] === 'function'){
+			offset--;
+		}
+		else{
+			result+=this.phrase[code][i+offset];
+		}
 	}
 	return result;
 };
