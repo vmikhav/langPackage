@@ -6,7 +6,7 @@ Node.js module for the organization of control of languages in the application a
 
 ## Installation
 
-  `npm install @sungmaster/langpackage`
+  `npm install langpackage`
 
 ## Usage
 
