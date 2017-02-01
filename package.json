@@ -1,0 +1,35 @@
+{
+  "name": "langpackage",
+  "version": "1.0.0",
+  "description": "Node.js module for the organization of control of languages in the application and templating of strings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+  },
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sungmaster/langPackage.git"
+  },
+  "keywords": [
+    "language",
+    "multilanguage",
+    "string",
+    "template"
+  ],
+  "author": "Volodymyr Mikhav <mihaw.wolodymyr@gmail.com> (http://hidalgocode.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sungmaster/langPackage/issues"
+  },
+  "homepage": "https://github.com/sungmaster/langPackage#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.15",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  }
+}
