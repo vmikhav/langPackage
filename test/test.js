@@ -41,4 +41,16 @@ describe('#langPackage', function() {
 		var result = langPack.de.get('apple', [2]);
 		expect(result).to.equal('Ich habe 2 Äpfel.');
 	});
+
+	langPack.en.pushPhrase('progress', ['Progress : ', (a)=>' / ', (a)=>'.', '']);
+	it('template with function #3', function() {
+		var result = langPack.en.get('progress', [2, 5]);
+		expect(result).to.equal('Progress : 2 / 5.');
+	});
+
+	langPack.en.pushPhrase('beer', (a)=>' beer');
+	it('function only', function() {
+		var result = langPack.en.get('beer', 2);
+		expect(result).to.equal('2 beer');
+	});
 });
