@@ -53,4 +53,28 @@ describe('#langPackage', function() {
 		var result = langPack.en.get('beer', 2);
 		expect(result).to.equal('2 beer');
 	});
+
+	var test = new langPackage();
+	test.pushPhrase('abc', ['test ', ' text']);
+	var json="";
+
+	it('json export', function() {
+		json = test.exportJSON();
+		expect(json).to.equal('{"abc":["test "," text"]}');
+	});
+
+	it('json import', function() {
+		var result = test.importJSON(json);
+		expect(result).to.equal(true);
+	});
+
+	it('falied json import', function() {
+		var result = test.importJSON(json+"[]");
+		expect(result).to.equal(false);
+	});	
+
+	it('read unknown phrase', function() {
+		var result = langPack.en.get('bier', 2);
+		expect(result).to.equal('');
+	});	
 });

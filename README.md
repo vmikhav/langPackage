@@ -35,6 +35,12 @@ result = langPack.en.get('apple', 3); // return 'I have 3 apple.'
 langPack.de.pushPhrase('apple', ['Ich habe ', (a)=>a==1?' Apfel':' Äpfel', '.']);
 result = langPack.de.get('apple', 1); // return 'Ich habe 1 Apfel.'
 result = langPack.de.get('apple', [2]); // return 'Ich habe 2 Äpfel.'
+
+//export dictionary (dictionary does not contain functions)
+var json = langPack.en.exportJSON();
+
+//import dictionary (dictionary does not contain functions)
+langPack.en.importJSON(json);
 ```
 
 ## API Reference
@@ -48,6 +54,21 @@ Adds phrase to dictionary
 Returns the phrase with the arguments added in a template
 * **keyword**: `String` Phrase keyword.
 * **args**: `Array` `optional` Template arguments.
+
+### exportJSON()
+Return dictionary as JSON string
+* **Attention!** You can export the dictionary does not contain functions, otherwise an error.
+
+### importJSON(json)
+Import dictionary from JSON string. Returns import success
+* **json**: `String` Dictionary in JSON.
+* **Attention!** You can import the dictionary does not contain functions, otherwise an error.
+* **Attention!** Import will replace the old dictionary.
+
+Dictionary example:
+```JSON
+{"hello":["Good day"], "apple":["I have ", " apple."]}
+```
 
 ## Tests
 

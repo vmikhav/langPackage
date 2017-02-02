@@ -1,6 +1,6 @@
 {
   "name": "langpackage",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Node.js module for the organization of control of languages in the application and templating of strings.",
   "main": "index.js",
   "scripts": {
